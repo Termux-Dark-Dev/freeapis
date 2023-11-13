@@ -1,8 +1,19 @@
 const express  = require('express')
 const router = express.Router()
-const {getUserData,insertData} = require('../controllers/dummyUserData')
+const {getAllUserData, getRandomSortedParticularLengthOfUser} = require('../controllers/dummyUserData')
 
-router.get('/getUser',getUserData)
-router.post('/addUser',insertData)
+
+router.get('/getUser',getAllUserData)
+router.get('/getUser/:usersCount',getRandomSortedParticularLengthOfUser)
 
 module.exports = router
+
+
+/*
+--------------------------------------------------------------COMMENTS HERE-------------------------------------------------------------------------
+
+This route was used for inserting data in local env.
+
+const {insertData} = require('../controllers/dummyUserData')
+router.post('/addUser',insertData)
+*/
